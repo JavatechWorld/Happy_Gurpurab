@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guru Nanak Dev Ji Gurpurab Greetings</title>
+<style>
+    /* Basic styling for the container and text */
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #282828;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        color: #fff;
+        position: relative;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2.5em;
+        color: #FFD700;
+        margin-bottom: 10px;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    p {
+        font-size: 1.2em;
+        margin-top: 5px;
+        color: #00FA9A;
+    }
+    img {
+        width: 150px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+    }
+
+    /* Fireworks animation */
+    .firework {
+        width: 5px;
+        height: 5px;
+        background-color: #FFD700;
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        animation: firework 2s ease-out infinite;
+    }
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+        }
+        to {
+            text-shadow: 0 0 20px #FF4500, 0 0 30px #FF4500;
+        }
+    }
+    @keyframes firework {
+        0% {
+            opacity: 1;
+            transform: scale(1) translate(0, 0);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(3) translate(var(--x), var(--y));
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Guru Nanak Dev Ji de Gurpurab diyan lakh lakh vadhiyaan</h1>
+<img src="guru_nanak.jpg" alt="Guru Nanak Dev Ji">
+    <p>"Nanak Naam Chardi Kala, Tere Bhane Sarbat Da Bhala" - Always wish for the wellbeing of all.</p>
+</div>
+
+<script>
+    // Generate random fireworks
+    function createFirework() {
+        const firework = document.createElement("div");
+        firework.classList.add("firework");
+        firework.style.setProperty('--x', `${Math.random() * 400 - 200}px`);
+        firework.style.setProperty('--y', `${Math.random() * 400 - 200}px`);
+        document.body.appendChild(firework);
+
+        setTimeout(() => {
+            firework.remove();
+        }, 2000);
+    }
+
+    // Repeat fireworks creation at intervals
+    setInterval(createFirework, 200);
+</script>
+</body>
+</html>
